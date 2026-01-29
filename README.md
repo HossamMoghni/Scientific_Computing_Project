@@ -1,14 +1,12 @@
-# StaRTrEK RNA Half-Life Estimation
+# RNA Half-Life Estimation
 
-This notebook implements the StaRTrEK algorithm (PMC9123730) for estimating mRNA half-lives from time-series gene expression data. The implementation follows the exact methodology described in the paper, including differential equation-based modeling, L1-regularized least squares, and Kolmogorov-Smirnov filtering.
 
-## Overview
+**Proposed Methodology:**
+- Dataset: Malaria IDC (1000 genes, 48 timepoints)
+- Preprocessing: Z-score normalization (uniform 1h sampling)
+- λ selection: L-curve method (result: λ=15)
+- Filtering: Fixed 9th percentile MSE threshold
 
-StaRTrEK (Stable Transcript half-life Estimation using Kolmogorov filtering) estimates mRNA half-lives by:
-1. Modeling gene expression decay using differential equations
-2. Computing pairwise comparisons between genes
-3. Applying L1 regularization and MSE-based filtering
-4. Using Kolmogorov-Smirnov tests for statistical validation
 
 ## Dependencies
 
@@ -44,7 +42,7 @@ pip install numpy pandas matplotlib seaborn scipy scikit-learn
    ```
 
 3. **Open the Notebook**:
-   - Navigate to `StaRTrEK_RNA_HalfLife_Estimation copy 2.ipynb`
+   - Navigate to `RNA_HalfLife_Estimation.ipynb`
    - Run cells sequentially from top to bottom
 
 4. **Execution Order**:
